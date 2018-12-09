@@ -11,6 +11,12 @@
           Pd.startOnClick(button, function() {
             console.log('clicked');
           });
+          patch = Pd.loadPatch(patchStr)}
+});
+  var button = document.getElementById('startBtn');
+  pd.startOnClick(button, function() {
+  console.log('clicked');
+});
           $('#stopBtn').click(function() {
             Pd.stop();
           })
