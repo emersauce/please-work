@@ -7,6 +7,7 @@
         var patch
         $.get('patches/myPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)}
+});
   var button = document.getElementById('startBtn');
   pd.startOnClick(button, function() {
   console.log('clicked');
