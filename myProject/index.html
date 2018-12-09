@@ -1,14 +1,17 @@
 <!doctype HTML>
 <html>
   <head>
-    <button id="startBtn">Start Sound</button>
     <script src="js/jquery.js"></script>
     <script src="js/webpd-latest.js"></script>
     <script>
         var patch
         $.get('patches/myPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)
-          Pd.start()
+          <button id="startBtn">Start Sound</button>
+          var button = document.getElementById('startBtn');
+          pd.startOnClick(button, function() {
+          console.log('clicked');
+});
         })
     </script>
   </head>
