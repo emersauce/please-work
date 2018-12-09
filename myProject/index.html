@@ -7,16 +7,20 @@
         var patch
         $.get('patches/myPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)
-          <button id="startBtn">Start Sound</button>
-          var button = document.getElementById('startBtn');
-          pd.startOnClick(button, function() {
-          console.log('clicked');
-       
-})
+var button = document.getElementById('startBtn');
+pd.startOnClick(button, function() {
+  console.log('clicked');
 });
-        })
+          $('#stopBtn').click(function() {
+  Pd.stop();
+})
     </script>
   </head>
-  <body>we tried my dudes</body>
+  <body>
+ <button id="startBtn">Start Sound</button>
+  <button id="stopBtn">Stop Sound</button>
+  <p>We tried my dudes</p>
+  </body>
+</body>
 </html>
 
