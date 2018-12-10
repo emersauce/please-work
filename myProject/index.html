@@ -10,7 +10,7 @@
           patch = Pd.loadPatch(patchStr)
           var button = document.getElementById('startBtn');
           Pd.startOnClick(button, function() {
-            Pd.start();
+            console.log('clicked');
           });
           $('#stopBtn').click(function() {
             Pd.stop();
