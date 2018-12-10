@@ -7,21 +7,20 @@
         var patch
         $.get('patches/myPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)
-          var button = document.getElementById('startBtn');
-          Pd.startOnClick(button, function() {
-            console.log('clicked');
+          $('#startBtn').click(function() {
+            Pd.start();
           });
           $('#stopBtn').click(function() {
             Pd.stop();
-          })
+          });
         });
     </script>
-    <div id="svg"></div>
   </head>
   <body>
- <button id="startBtn">sound on</button>
-  <button id="stopBtn">sound off</button>
-  <p>Hi.</p>
+    <div id="svg"></div>
+    <button id="startBtn">sound on</button>
+    <button id="stopBtn">sound off</button>
+    <p>Hi.</p>
   </body>
 </body>
 </html>
