@@ -1,6 +1,7 @@
 <!doctype HTML>
 <html>
   <head>
+    <script src="js/pd-fileutils.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/webpd-latest.js"></script>
     <script>
@@ -15,6 +16,12 @@
             Pd.stop();
           })
         });
+    </script>
+    <div id="svg"></div>
+    <script>
+        var patch = pdfu.parse('#N canvas 778 17 450 300 10;\n#X obj 14 13 loadbang;\n#X obj 14 34 print bla;\n#X connect 0 0 1 0;')
+        var rendered = pdfu.renderSvg(patch, {svgFile: false})
+        $('#svg').html(rendered)
     </script>
   </head>
   <body>
