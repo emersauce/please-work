@@ -4,6 +4,20 @@
     <script src="js/jquery.js"></script>
     <script src="js/webpd-latest.js"></script>
     <script>
+        var info = document.getElementById("info");
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+              console.log(position);
+              var lng = position.coords.longitude;
+              var lat = position.coords.latitude;
+              info.innerHTML = lng + ', ' + lat;
+              Pd.send('long', [lng])
+              Pd.send('lat', [lat])
+              // Move PD code here to use longitude and latitude values
+    });
+} else {
+    info.innerHTML = "Geolocation is not supported by this browser.";
+}
         var patch
         $.get('patches/myPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)
