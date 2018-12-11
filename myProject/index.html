@@ -7,13 +7,11 @@
         var info = document.getElementById("info");
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
-              console.log(position);
-              var lng = position.coords.longitude;
-              var lat = position.coords.latitude;
-              info.innerHTML = lng + ', ' + lat;
-              Pd.send('long', [lng])
-              Pd.send('lat', [lat])
-              // Move PD code here to use longitude and latitude values
+            console.log(position);
+            var lng = position.coords.longitude;
+            var lat = position.coords.latitude;
+            info.innerHTML = lng + ', ' + lat;
+          // Move PD code here to use longitude and latitude values
     });
 } else {
     info.innerHTML = "Geolocation is not supported by this browser.";
@@ -27,15 +25,14 @@
           $('#stopBtn').click(function() {
             Pd.stop();
           });
-        });    
+        });
+    </script>
   </head>
   <body>
     <div id="svg"></div>
     <button id="startBtn">sound on</button>
-    
     <button id="stopBtn">sound off</button>
     <p>Hi.</p>
   </body>
 </body>
 </html>
-
