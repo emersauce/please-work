@@ -11,8 +11,8 @@
             var lng = position.coords.longitude;
             var lat = position.coords.latitude;
            // info.innerHTML = lng + ', ' + lat;
-            Pd.send('long', ['lng']);
-            Pd.send('lat', ['lat']);
+            Pd.send('long', lng);
+            Pd.send('lat', lat);
           //  PD
     });
 } else {
