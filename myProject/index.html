@@ -13,7 +13,7 @@
             info.innerHTML = lng + ', ' + lat;
             Pd.send('long', [lng]);
             Pd.send('lat', [lat]);
-            Pd.receive('test', {
+            Pd.receive('test', function() {
               console.log('received a message from "someName" : ', args)
             });
           //  PD
