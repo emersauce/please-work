@@ -13,6 +13,9 @@
             info.innerHTML = lng + ', ' + lat;
             Pd.send('long', [lng]);
             Pd.send('lat', [lat]);
+            Pd.receive('test', {
+              console.log('received a message from "someName" : ', args)
+            });
           //  PD
     });
 } else {
